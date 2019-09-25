@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title text-center>
+        Edit Meal
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ng-container *ngFor="let editedItem of items">
+  <ng-container *ngIf="editedItem.id == myId">
+    <ion-content>
+      <ion-item>
+        <ion-label position="fixed">Name</ion-label>
+        <ion-input [(ngModel)]="editedItem.title"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="fixed">Details</ion-label>
+        <ion-input [(ngModel)]="editedItem.value"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="updateItem(editedItem)">Done</ion-button>
+    </ion-content>
+ 
+  </ng-container>
+</ng-container>
